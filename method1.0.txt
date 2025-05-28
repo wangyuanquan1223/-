@@ -1,0 +1,407 @@
+[
+  {
+    "methods": [
+      {
+        "method_id": 0, // 方法唯一标识
+        "name": "UpdateSeatPosition", // 方法名称：更新座椅位置
+        "request_type": "UpdateSeatPositionRequest", // 请求类型
+        "request_type_fields": [
+          { "name": "name", "proto_type": "string", "type": "string" }, // 座椅名称
+          { // 座椅部件枚举
+            "enum_values": [
+              { "name": "SC_UNSPECIFIED", "number": "0" },
+              { "name": "SC_ARMREST", "number": "1" },
+              { "name": "SC_BACK", "number": "2" },
+              { "name": "SC_CUSHION", "number": "3" },
+              { "name": "SC_HEADREST", "number": "4" },
+              { "name": "SC_LUMBAR", "number": "5" },
+              { "name": "SC_NECK_SCARF", "number": "6" },
+              { "name": "SC_SIDE_BOLSTER_BACK", "number": "7" },
+              { "name": "SC_SIDE_BOLSTER_CUSHION", "number": "8" },
+              { "name": "SC_UPPER_SHOULDER", "number": "9" },
+              { "name": "SC_CUSHION_FRONT", "number": "10" },
+              { "name": "SC_FOOTREST", "number": "30" },
+              { "name": "SC_LEGREST", "number": "31" },
+              { "name": "SC_LEGREST_EXTENSION", "number": "32" }
+            ],
+            "name": "component", "proto_type": "enum", "type": "SeatComponent"
+          },
+          { // 方向枚举
+            "enum_values": [
+              { "name": "D_UNSPECIFIED", "number": "0" },
+              { "name": "D_FORWARD", "number": "1" },
+              { "name": "D_BACKWARD", "number": "2" },
+              { "name": "D_INFLATE", "number": "3" },
+              { "name": "D_DEFLATE", "number": "4" },
+              { "name": "D_UP", "number": "5" },
+              { "name": "D_DOWN", "number": "6" },
+              { "name": "D_LEFTWARD", "number": "30" },
+              { "name": "D_RIGHTWARD", "number": "31" },
+              { "name": "D_FOLD", "number": "32" },
+              { "name": "D_UNFOLD", "number": "33" }
+            ],
+            "name": "direction", "proto_type": "enum", "type": "Direction"
+          },
+          { "name": "position", "proto_type": "int32", "type": "int32" }, // 位置
+          { "name": "tilt", "proto_type": "int32", "type": "int32" }, // 倾斜角度
+          { "name": "percentage_position", "proto_type": "int32", "type": "int32" } // 百分比位置
+        ],
+        "request_type_full_name": "cls.vehicle.body.seating.v1.UpdateSeatPositionRequest",
+        "response_type_full_name": "com.google.rpc.Status",
+        "service_name": "Seating"
+      },
+      {
+        "method_id": 0, // 方法唯一标识
+        "name": "UpdateSeatTemperature", // 方法名称：更新座椅温度
+        "request_type": "UpdateSeatTemperatureRequest", // 请求类型
+        "request_type_fields": [
+          { "name": "name", "proto_type": "string", "type": "string" }, // 座椅名称
+          { // 座椅部件枚举（可重复）
+            "enum_values": [
+              { "name": "SC_UNSPECIFIED", "number": "0" },
+              { "name": "SC_ARMREST", "number": "1" },
+              { "name": "SC_BACK", "number": "2" },
+              { "name": "SC_CUSHION", "number": "3" },
+              { "name": "SC_HEADREST", "number": "4" },
+              { "name": "SC_LUMBAR", "number": "5" },
+              { "name": "SC_NECK_SCARF", "number": "6" },
+              { "name": "SC_SIDE_BOLSTER_BACK", "number": "7" },
+              { "name": "SC_SIDE_BOLSTER_CUSHION", "number": "8" },
+              { "name": "SC_UPPER_SHOULDER", "number": "9" },
+              { "name": "SC_CUSHION_FRONT", "number": "10" },
+              { "name": "SC_FOOTREST", "number": "30" },
+              { "name": "SC_LEGREST", "number": "31" },
+              { "name": "SC_LEGREST_EXTENSION", "number": "32" }
+            ],
+            "label": "repeated",
+            "name": "components", "proto_type": "enum", "type": "SeatComponent"
+          },
+          { // 模式枚举
+            "enum_values": [
+              { "name": "M_UNSPECIFIED", "number": "0" },
+              { "name": "M_OFF", "number": "1" },
+              { "name": "M_COOL", "number": "2" },
+              { "name": "M_VENT", "number": "3" },
+              { "name": "M_HEAT", "number": "4" }
+            ],
+            "name": "mode", "proto_type": "enum", "type": "Mode"
+          },
+          { // 温度等级枚举
+            "enum_values": [
+              { "name": "TL_UNSPECIFIED", "number": "0" },
+              { "name": "TL_OFF", "number": "1" },
+              { "name": "TL_AUTO", "number": "2" },
+              { "name": "TL_LOW", "number": "3" },
+              { "name": "TL_MEDIUM", "number": "4" },
+              { "name": "TL_HIGH", "number": "5" }
+            ],
+            "name": "temperature_level", "proto_type": "enum", "type": "TemperatureLevel"
+          }
+        ],
+        "request_type_full_name": "cls.vehicle.body.seating.v1.UpdateSeatTemperatureRequest",
+        "response_type_full_name": "com.google.rpc.Status",
+        "service_name": "Seating"
+      },
+      {
+        "method_id": 0, // 方法唯一标识
+        "name": "UpdateSeatMassage", // 方法名称：更新座椅按摩
+        "request_type": "UpdateSeatMassageRequest", // 请求类型
+        "request_type_fields": [
+          { "name": "name", "proto_type": "string", "type": "string" }, // 座椅名称
+          { // 按摩类型枚举
+            "enum_values": [
+              { "name": "MT_UNSPECIFIED", "number": "0" },
+              { "name": "MT_OFF", "number": "1" },
+              { "name": "MT_ROLL", "number": "2" },
+              { "name": "MT_KNEAD", "number": "3" },
+              { "name": "MT_ANTI_FATIGUE", "number": "4" },
+              { "name": "MT_PULSE", "number": "5" },
+              { "name": "MT_STRETCH", "number": "6" },
+              { "name": "MT_LUMBAR", "number": "7" },
+              { "name": "MT_SHOULDER", "number": "8" },
+              { "name": "MT_WAVE", "number": "9" },
+              { "name": "MT_RELIEF", "number": "10" },
+              { "name": "MT_GLIDE", "number": "11" },
+              { "name": "MT_LOCAL31", "number": "31" },
+              { "name": "MT_LOCAL32", "number": "32" },
+              { "name": "MT_LOCAL33", "number": "33" },
+              { "name": "MT_LOCAL34", "number": "34" },
+              { "name": "MT_LOCAL35", "number": "35" },
+              { "name": "MT_LOCAL36", "number": "36" },
+              { "name": "MT_LOCAL37", "number": "37" },
+              { "name": "MT_LOCAL38", "number": "38" },
+              { "name": "MT_LOCAL39", "number": "39" },
+              { "name": "MT_LOCAL40", "number": "40" },
+              { "name": "MT_LOCAL41", "number": "41" },
+              { "name": "MT_LOCAL42", "number": "42" },
+              { "name": "MT_LOCAL43", "number": "43" },
+              { "name": "MT_LOCAL44", "number": "44" },
+              { "name": "MT_LOCAL45", "number": "45" }
+            ],
+            "name": "type", "proto_type": "enum", "type": "MassageType"
+          },
+          { "name": "intensity", "proto_type": "int32", "type": "int32" } // 按摩强度
+        ],
+        "request_type_full_name": "cls.vehicle.body.seating.v1.UpdateSeatMassageRequest",
+        "response_type_full_name": "com.google.rpc.Status",
+        "service_name": "Seating"
+      },
+      {
+        "method_id": 0, // 方法唯一标识
+        "name": "UpdateSeatPositionGroup", // 方法名称：批量更新座椅位置
+        "request_type": "UpdateSeatPositionGroupRequest", // 请求类型
+        "request_type_fields": [
+          { // 批量位置请求
+            "label": "repeated",
+            "message_fields": [
+              { "name": "name", "proto_type": "string", "type": "string" }, // 座椅名称
+              { // 座椅部件枚举
+                "enum_values": [
+                  { "name": "SC_UNSPECIFIED", "number": "0" },
+                  { "name": "SC_ARMREST", "number": "1" },
+                  { "name": "SC_BACK", "number": "2" },
+                  { "name": "SC_CUSHION", "number": "3" },
+                  { "name": "SC_HEADREST", "number": "4" },
+                  { "name": "SC_LUMBAR", "number": "5" },
+                  { "name": "SC_NECK_SCARF", "number": "6" },
+                  { "name": "SC_SIDE_BOLSTER_BACK", "number": "7" },
+                  { "name": "SC_SIDE_BOLSTER_CUSHION", "number": "8" },
+                  { "name": "SC_UPPER_SHOULDER", "number": "9" },
+                  { "name": "SC_CUSHION_FRONT", "number": "10" },
+                  { "name": "SC_FOOTREST", "number": "30" },
+                  { "name": "SC_LEGREST", "number": "31" },
+                  { "name": "SC_LEGREST_EXTENSION", "number": "32" }
+                ],
+                "name": "component", "proto_type": "enum", "type": "SeatComponent"
+              },
+              { // 方向枚举
+                "enum_values": [
+                  { "name": "D_UNSPECIFIED", "number": "0" },
+                  { "name": "D_FORWARD", "number": "1" },
+                  { "name": "D_BACKWARD", "number": "2" },
+                  { "name": "D_INFLATE", "number": "3" },
+                  { "name": "D_DEFLATE", "number": "4" },
+                  { "name": "D_UP", "number": "5" },
+                  { "name": "D_DOWN", "number": "6" },
+                  { "name": "D_LEFTWARD", "number": "30" },
+                  { "name": "D_RIGHTWARD", "number": "31" },
+                  { "name": "D_FOLD", "number": "32" },
+                  { "name": "D_UNFOLD", "number": "33" }
+                ],
+                "name": "direction", "proto_type": "enum", "type": "Direction"
+              },
+              { "name": "position", "proto_type": "int32", "type": "int32" }, // 位置
+              { "name": "tilt", "proto_type": "int32", "type": "int32" }, // 倾斜角度
+              { "name": "percentage_position", "proto_type": "int32", "type": "int32" } // 百分比位置
+            ],
+            "name": "positions", "proto_type": "message", "type": "UpdateSeatPositionRequest"
+          }
+        ],
+        "request_type_full_name": "cls.vehicle.body.seating.v1.UpdateSeatPositionGroupRequest",
+        "response_type_full_name": "com.google.rpc.Status",
+        "service_name": "Seating"
+      },
+      {
+        "method_id": 0, // 方法唯一标识
+        "name": "UpdateSeatTemperatureGroup", // 方法名称：批量更新座椅温度
+        "request_type": "UpdateSeatTemperatureGroupRequest", // 请求类型
+        "request_type_fields": [
+          { // 批量温度请求
+            "label": "repeated",
+            "message_fields": [
+              { "name": "name", "proto_type": "string", "type": "string" }, // 座椅名称
+              { // 座椅部件枚举（可重复）
+                "enum_values": [
+                  { "name": "SC_UNSPECIFIED", "number": "0" },
+                  { "name": "SC_ARMREST", "number": "1" },
+                  { "name": "SC_BACK", "number": "2" },
+                  { "name": "SC_CUSHION", "number": "3" },
+                  { "name": "SC_HEADREST", "number": "4" },
+                  { "name": "SC_LUMBAR", "number": "5" },
+                  { "name": "SC_NECK_SCARF", "number": "6" },
+                  { "name": "SC_SIDE_BOLSTER_BACK", "number": "7" },
+                  { "name": "SC_SIDE_BOLSTER_CUSHION", "number": "8" },
+                  { "name": "SC_UPPER_SHOULDER", "number": "9" },
+                  { "name": "SC_CUSHION_FRONT", "number": "10" },
+                  { "name": "SC_FOOTREST", "number": "30" },
+                  { "name": "SC_LEGREST", "number": "31" },
+                  { "name": "SC_LEGREST_EXTENSION", "number": "32" }
+                ],
+                "label": "repeated",
+                "name": "components", "proto_type": "enum", "type": "SeatComponent"
+              },
+              { // 模式枚举
+                "enum_values": [
+                  { "name": "M_UNSPECIFIED", "number": "0" },
+                  { "name": "M_OFF", "number": "1" },
+                  { "name": "M_COOL", "number": "2" },
+                  { "name": "M_VENT", "number": "3" },
+                  { "name": "M_HEAT", "number": "4" }
+                ],
+                "name": "mode", "proto_type": "enum", "type": "Mode"
+              },
+              { // 温度等级枚举
+                "enum_values": [
+                  { "name": "TL_UNSPECIFIED", "number": "0" },
+                  { "name": "TL_OFF", "number": "1" },
+                  { "name": "TL_AUTO", "number": "2" },
+                  { "name": "TL_LOW", "number": "3" },
+                  { "name": "TL_MEDIUM", "number": "4" },
+                  { "name": "TL_HIGH", "number": "5" }
+                ],
+                "name": "temperature_level", "proto_type": "enum", "type": "TemperatureLevel"
+              }
+            ],
+            "name": "temperatures", "proto_type": "message", "type": "UpdateSeatTemperatureRequest"
+          }
+        ],
+        "request_type_full_name": "cls.vehicle.body.seating.v1.UpdateSeatTemperatureGroupRequest",
+        "response_type_full_name": "com.google.rpc.Status",
+        "service_name": "Seating"
+      },
+      {
+        "method_id": 0, // 方法唯一标识
+        "name": "UpdateSeatMode", // 方法名称：更新座椅模式
+        "request_type": "UpdateSeatModeRequest", // 请求类型
+        "request_type_fields": [
+          { // 模式枚举
+            "enum_values": [
+              { "name": "M_UNSPECIFIED", "number": "0" },
+              { "name": "M_EASY_ENTRY_MODE", "number": "1" },
+              { "name": "M_VIP_MODE_ALL", "number": "2" },
+              { "name": "M_LUGGAGE_MODE_ALL", "number": "3" },
+              { "name": "M_EASY_EXIT_MODE", "number": "4" },
+              { "name": "M_INTIMACY_MODE_2L", "number": "5" },
+              { "name": "M_FAMILY_MODE_2R", "number": "6" },
+              { "name": "M_FAMILY_MODE_2L", "number": "7" },
+              { "name": "M_LUGGAGE_MODE_3L", "number": "8" },
+              { "name": "M_LUGGAGE_MODE_3R", "number": "9" },
+              { "name": "M_VIP_MODE_2L", "number": "10" },
+              { "name": "M_RECOVERY_MODE_2L", "number": "11" },
+              { "name": "M_VIP_MODE_2R", "number": "12" },
+              { "name": "M_RECOVERY_MODE_2R", "number": "13" },
+              { "name": "M_LYING_MODE_2L", "number": "14" },
+              { "name": "M_LYING_MODE_2R", "number": "15" },
+              { "name": "M_LEGREST_SYSTEM_EXTENSION_MODE_2L", "number": "16" },
+              { "name": "M_LEGREST_SYSTEM_RECOVERY_MODE_2L", "number": "17" },
+              { "name": "M_LEGREST_SYSTEM_EXTENSION_MODE_2R", "number": "18" },
+              { "name": "M_LEGREST_SYSTEM_RECOVERY_MODE_2R", "number": "19" },
+              { "name": "M_INTIMACY_MODE_2R", "number": "20" },
+              { "name": "M_EASY_ENTRY_4S_2L", "number": "21" },
+              { "name": "M_EASY_EXIT_4S_2L", "number": "22" },
+              { "name": "M_EASY_ENTRY_4S_2R", "number": "23" },
+              { "name": "M_EASY_EXIT_4S_2R", "number": "24" },
+              { "name": "M_EASY_EXIT_4S_ALL", "number": "25" },
+              { "name": "M_EASY_ENTRY_4S_ALL", "number": "26" },
+              { "name": "M_MODE_27", "number": "27" },
+              { "name": "M_MODE_28", "number": "28" },
+              { "name": "M_MODE_29", "number": "29" },
+              { "name": "M_MODE_30", "number": "30" },
+              { "name": "M_MODE_31", "number": "31" },
+              { "name": "M_MODE_32", "number": "32" },
+              { "name": "M_MODE_33", "number": "33" },
+              { "name": "M_MODE_34", "number": "34" },
+              { "name": "M_MODE_35", "number": "35" },
+              { "name": "M_MODE_36", "number": "36" },
+              { "name": "M_MODE_37", "number": "37" },
+              { "name": "M_MODE_38", "number": "38" },
+              { "name": "M_MODE_39", "number": "39" },
+              { "name": "M_MODE_40", "number": "40" },
+              { "name": "M_MODE_41", "number": "41" },
+              { "name": "M_MODE_42", "number": "42" },
+              { "name": "M_MODE_43", "number": "43" },
+              { "name": "M_MODE_44", "number": "44" },
+              { "name": "M_MODE_45", "number": "45" },
+              { "name": "M_MODE_46", "number": "46" },
+              { "name": "M_MODE_47", "number": "47" },
+              { "name": "M_MODE_48", "number": "48" },
+              { "name": "M_MODE_49", "number": "49" },
+              { "name": "M_MODE_50", "number": "50" },
+              { "name": "M_MODE_51", "number": "51" },
+              { "name": "M_MODE_52", "number": "52" },
+              { "name": "M_MODE_53", "number": "53" },
+              { "name": "M_MODE_54", "number": "54" },
+              { "name": "M_MODE_55", "number": "55" },
+              { "name": "M_MODE_56", "number": "56" },
+              { "name": "M_MODE_57", "number": "57" },
+              { "name": "M_MODE_58", "number": "58" },
+              { "name": "M_MODE_59", "number": "59" },
+              { "name": "M_MODE_60", "number": "60" },
+              { "name": "M_MODE_61", "number": "61" },
+              { "name": "M_MODE_62", "number": "62" },
+              { "name": "M_MODE_63", "number": "63" },
+              { "name": "M_MODE_64", "number": "64" }
+            ],
+            "name": "mode", "proto_type": "enum", "type": "Mode"
+          },
+          { // 模式操作枚举
+            "enum_values": [
+              { "name": "MO_UNSPECIFIED", "number": "0" },
+              { "name": "MO_MODE_START", "number": "1" },
+              { "name": "MO_MODE_STOP", "number": "2" },
+              { "name": "MO_MODE_CANCEL", "number": "3" }
+            ],
+            "name": "mode_operation", "proto_type": "enum", "type": "ModeOperation"
+          }
+        ],
+        "request_type_full_name": "cls.vehicle.body.seating.v1.UpdateSeatModeRequest",
+        "response_type_full_name": "com.google.rpc.Status",
+        "service_name": "Seating"
+      },
+      {
+        "method_id": 0, // 方法唯一标识
+        "name": "MoveSeats", // 方法名称：移动座椅
+        "request_type": "MoveSeatsRequest", // 请求类型
+        "request_type_fields": [
+          { // 批量移动请求
+            "label": "repeated",
+            "message_fields": [
+              { "name": "name", "proto_type": "string", "type": "string" }, // 座椅名称
+              { // 座椅部件枚举
+                "enum_values": [
+                  { "name": "SC_UNSPECIFIED", "number": "0" },
+                  { "name": "SC_ARMREST", "number": "1" },
+                  { "name": "SC_BACK", "number": "2" },
+                  { "name": "SC_CUSHION", "number": "3" },
+                  { "name": "SC_HEADREST", "number": "4" },
+                  { "name": "SC_LUMBAR", "number": "5" },
+                  { "name": "SC_NECK_SCARF", "number": "6" },
+                  { "name": "SC_SIDE_BOLSTER_BACK", "number": "7" },
+                  { "name": "SC_SIDE_BOLSTER_CUSHION", "number": "8" },
+                  { "name": "SC_UPPER_SHOULDER", "number": "9" },
+                  { "name": "SC_CUSHION_FRONT", "number": "10" },
+                  { "name": "SC_FOOTREST", "number": "30" },
+                  { "name": "SC_LEGREST", "number": "31" },
+                  { "name": "SC_LEGREST_EXTENSION", "number": "32" }
+                ],
+                "name": "component", "proto_type": "enum", "type": "SeatComponent"
+              },
+              { // 方向枚举
+                "enum_values": [
+                  { "name": "D_UNSPECIFIED", "number": "0" },
+                  { "name": "D_FORWARD", "number": "1" },
+                  { "name": "D_BACKWARD", "number": "2" },
+                  { "name": "D_INFLATE", "number": "3" },
+                  { "name": "D_DEFLATE", "number": "4" },
+                  { "name": "D_UP", "number": "5" },
+                  { "name": "D_DOWN", "number": "6" },
+                  { "name": "D_LEFTWARD", "number": "30" },
+                  { "name": "D_RIGHTWARD", "number": "31" },
+                  { "name": "D_FOLD", "number": "32" },
+                  { "name": "D_UNFOLD", "number": "33" }
+                ],
+                "name": "direction", "proto_type": "enum", "type": "Direction"
+              },
+              { "name": "position", "proto_type": "int32", "type": "int32" }, // 位置
+              { "name": "tilt", "proto_type": "int32", "type": "int32" } // 倾斜角度
+            ],
+            "name": "move_seat_requests", "proto_type": "message", "type": "MoveSeatRequest"
+          }
+        ],
+        "request_type_full_name": "cls.vehicle.body.seating.v1.MoveSeatsRequest",
+        "response_type_full_name": "com.google.rpc.Status",
+        "service_name": "Seating"
+      }
+    ]
+  }
+]
